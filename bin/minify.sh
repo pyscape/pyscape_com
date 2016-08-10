@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#########
+# Setup #
+#########
+
 # Requires java and yui-compressor
 # https://github.com/yui/yuicompressor/downloads
 #
@@ -10,6 +14,12 @@
 
 yui='/usr/bin/yuicompressor/build/yuicompressor-2.4.7.jar'
 java='/usr/bin/java'
+
+# Requires nodejs, npm, grunt, and grunt-uncss
+# >>> sudo apt-get install nodejs
+# >>> sudo apt-get install npm
+# >>> sudo npm install -g grunt-cli
+# >>> sudo npm install grunt-uncss --save-dev
 
 ###################
 # JS Minification #

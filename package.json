@@ -1,0 +1,12 @@
+{
+  "name": "pyscape_com",
+  "version": "0.1.0",
+  "author": "PyScape",
+  "description": "PyScape's website",
+  "homepage": "http://www.pyscape.com/",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "uncss": "~0.14.1"
+  }
+}
