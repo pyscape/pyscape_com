@@ -67,5 +67,5 @@ node_modules/
 # build files that aren't used
 src/css/style.min.css
 src/css/ubuntu_300.min.css
-build/
+deploy/
 

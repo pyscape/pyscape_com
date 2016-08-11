@@ -30,39 +30,40 @@ java='/usr/bin/java'
 # >>> sudo npm install grunt-uncss --save-dev
 # >>> sudo npm install grunt-replace --save-dev
 
+###############################
+# initilize deployment folder #
+###############################
+rm -r deploy
+mkdir -p deploy/js
+mkdir -p deploy/css
+mkdir -p deploy/img
+cp src/index.html deploy/index.html
+cp -r src/img/* deploy/img/
+
 ###################
 # JS Minification #
 ###################
 
 # Must have. Do not remove.
-cat js/jquery.min.js > js/deploy.min.js
-echo $'\n' >> js/deploy.min.js
-cat js/bootstrap.min.js >> js/deploy.min.js
-echo $'\n' >> js/deploy.min.js
+cat src/js/jquery.min.js        > deploy/js/deploy.min.js
+echo $'\n\n'                   >> deploy/js/deploy.min.js
+cat src/js/bootstrap.min.js    >> deploy/js/deploy.min.js
+echo $'\n\n'                   >> deploy/js/deploy.min.js
 
 # Optional
-cat js/owl.carousel.min.js >> js/deploy.min.js
-echo $'\n' >> js/deploy.min.js
-cat js/index.js >> js/deploy.min.js
+cat src/js/owl.carousel.min.js >> deploy/js/deploy.min.js
+echo $'\n\n'                   >> deploy/js/deploy.min.js
+cat src/js/index.js            >> deploy/js/deploy.min.js
 
-####################
-# CSS minification #
-####################
-
-# Must have. Do not remove.
-
-$java -jar $yui css/theme.css -o css/theme.min.css
-$java -jar $yui css/animate.css -o css/animate.min.css
-$java -jar $yui css/ubuntu_300.css -o css/ubuntu_300.min.css
-
-cat css/ubuntu_300.min.css > css/style.min.css
-echo $'\n' >> css/style.min.css
-cat css/theme.min.css >> css/style.min.css
-echo $'\n' >> css/style.min.css
-cat css/animate.min.css >> css/style.min.css
 
 ####################
 # Grunt Automation #
 ####################
 
 grunt
+
+##############
+# Publishing #
+##############
+
+cp deploy/index.html index.html

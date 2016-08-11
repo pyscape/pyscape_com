@@ -3019,10 +3019,11 @@ tbody.collapse.in {
     .nav > li > a {
       position: relative;
       display: block;
+      background-color: grey; 
       padding: 10px 15px; }
       .nav > li > a:hover, .nav > li > a:focus {
         text-decoration: none;
-        background-color: white; }
+        background-color: black; }
     .nav > li.disabled > a {
       color: #afb3bc; }
       .nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
@@ -3031,7 +3032,7 @@ tbody.collapse.in {
         background-color: transparent;
         cursor: false; }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background-color: white;
+    background-color: black;
     border-color: #36ccb2; }
   .nav .nav-divider {
     height: 1px;
@@ -3178,7 +3179,8 @@ tbody.collapse.in {
 
 .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
   margin-right: -40px;
-  margin-left: -40px; }
+  margin-left: -40px;
+  background: rgba(0,0,0,0.2);}
   @media (min-width: 768px) {
     .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3463,20 +3465,18 @@ tbody.collapse.in {
     color: #d9dadf; }
     .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
       color: #fff;
-      background-color: transparent; }
+      background-color: black;}
   .navbar-inverse .navbar-text {
     color: #d9dadf; }
   .navbar-inverse .navbar-nav > li > a {
     color: #d9dadf; }
     .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-      color: #fff;
-      background-color: transparent; }
+      color: #fff;}
   .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
     background-color: #090909; }
   .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
-    color: #444;
-    background-color: transparent; }
+    color: #444;}
   .navbar-inverse .navbar-toggle {
     border-color: #333; }
     .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
@@ -3496,14 +3496,12 @@ tbody.collapse.in {
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
       color: #d9dadf; }
       .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #fff;
-        background-color: transparent; }
+        color: #fff;}
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #fff;
       background-color: #090909; }
     .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-      color: #444;
-      background-color: transparent; } }
+      color: #444;} }
   .navbar-inverse .navbar-link {
     color: #d9dadf; }
     .navbar-inverse .navbar-link:hover {
