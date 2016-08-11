@@ -479,17 +479,20 @@ blockquote {
   .row:after {
     clear: both; }
 
-.col-md-2, .col-md-4, .col-md-5, .col-xs-6, .col-md-6, .col-md-7, .col-md-8, .col-md-10, .col-md-12 {
+.col-md-2, .col-md-4, .col-md-5, .col-xs-6, .col-md-6, .col-md-7, .col-md-8, .col-md-10, .col-xs-12, .col-md-12 {
   position: relative;
   min-height: 1px;
   padding-left: 40px;
   padding-right: 40px; }
 
-.col-xs-6 {
+.col-xs-6, .col-xs-12 {
   float: left; }
 
 .col-xs-6 {
   width: 50%; }
+
+.col-xs-12 {
+  width: 100%; }
 
 @media (min-width: 992px) {
   .col-md-2, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-10, .col-md-12 {
@@ -597,9 +600,12 @@ blockquote {
   .nav:after {
     clear: both; }
   .nav > li {
+    text-align: center;
+    font-weight: bold;
     position: relative;
     display: block; }
     .nav > li > a {
+      padding: 40px;
       position: relative;
       display: block;
       padding: 10px 15px; }
@@ -723,15 +729,6 @@ blockquote {
 
 .navbar-nav {
   margin: 19.25px -40px; }
-  .navbar-nav > li > a {
-    padding: 50px;
-    margin: 50px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #36ccb2;
-    height: 100px;
-    display: block;
-}
   @media (min-width: 768px) {
     .navbar-nav {
       float: left;
@@ -907,9 +904,6 @@ a.navbar-brand {
 a.navbar-brand:hover {
   color: #36ccb2 !important; }
 
-.nav.subnav > li > a {
-  padding: 0 0 5px 0; }
-
 .nav.subnav > li > a:hover {
   background: none; }
 
@@ -930,16 +924,9 @@ a.navbar-brand:hover {
 
 #hero {
     background-image: url('src/img/image3.jpg');
-    background-size:cover; }
+    background-size:cover;
+}
 
-#hero, #about, #contact {
-    padding: 50px;
-    margin: 50px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #36ccb2;
-    height: 100px;
-    display: block; }
  
 /*** uncss> filename: src/css/animate.css ***/
 @charset "UTF-8";
@@ -1150,12 +1137,12 @@ Copyright (c) 2015 Daniel Eden
             <div class="col-md-2 col-xs-6">
             <h4>Menu</h4>
                 <ul class="nav subnav">
-                    <li role="presentation" class="active"><a href="index.html">Home</a></li>
-                    <li role="presentation"><a href="index.html#about">About</a></li>
-                    <li role="presentation"><a href="index.html#contact">Contact</a></li>
+                    <li role="presentation" class="active"><a href="#hero">Home</a></li>
+                    <li role="presentation"><a href="#about">About</a></li>
+                    <li role="presentation"><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="col-md-6 col-md-offset-2">
+            <div class="col-md-6 col-xs-12 col-md-offset-4">
                 <h5>PyScape Ltd.</h5>
                 <p>505 S. Mason Street, Apt 205</p>
                 <p>Fort Collins, CO 80521</p>
@@ -1203,7 +1190,7 @@ $(function() {
         smartSpeed:0
 
     });
-    $('.nav li a').click(function() {
+    $('.nav .in li a').click(function() {
         $('#navToggle').click();
     });
 });

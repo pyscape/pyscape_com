@@ -3269,9 +3269,12 @@ tbody.collapse.in {
   .nav:after {
     clear: both; }
   .nav > li {
+    text-align: center;
+    font-weight: bold;
     position: relative;
     display: block; }
     .nav > li > a {
+      padding: 40px;
       position: relative;
       display: block;
       padding: 10px 15px; }
@@ -3528,15 +3531,6 @@ tbody.collapse.in {
 
 .navbar-nav {
   margin: 19.25px -40px; }
-  .navbar-nav > li > a {
-    padding: 50px;
-    margin: 50px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #36ccb2;
-    height: 100px;
-    display: block;
-}
   @media (max-width: 767px) {
     .navbar-nav .open .dropdown-menu {
       position: static;
@@ -7361,9 +7355,6 @@ a.navbar-brand {
 a.navbar-brand:hover {
   color: #36ccb2 !important; }
 
-.nav.subnav > li > a {
-  padding: 0 0 5px 0; }
-
 .nav.subnav > li > a:hover {
   background: none; }
 
@@ -7469,13 +7460,6 @@ a.navbar-brand:hover {
 
 #hero {
     background-image: url('src/img/image3.jpg');
-    background-size:cover; }
+    background-size:cover;
+}
 
-#hero, #about, #contact {
-    padding: 50px;
-    margin: 50px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #36ccb2;
-    height: 100px;
-    display: block; }
