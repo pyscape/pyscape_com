@@ -13,7 +13,7 @@ $(function() {
         smartSpeed:0
 
     });
-    $('.in li a').click(function() {
+    $('#navbar').delegate('li a', "click", function() {
         $('#navToggle').click();
     });
 });
