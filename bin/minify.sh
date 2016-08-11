@@ -49,3 +49,5 @@ $java -jar $yui css/animate.css -o css/animate.min.css
 cat css/theme.min.css > css/style.min.css
 echo $'\n' >> css/style.min.css
 cat css/animate.min.css >> css/style.min.css
+
+grunt
