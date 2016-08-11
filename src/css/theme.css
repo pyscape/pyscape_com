@@ -3529,11 +3529,7 @@ tbody.collapse.in {
 .navbar-nav {
   margin: 19.25px -40px; }
   .navbar-nav > li > a {
-    padding: 5px;
-    margin: 50px 5%;
-    line-height: 90px;
-    height: 100px;
-    width: 90%;
+    padding: 40px;
     text-align: center;
     font-weight: bold;
     border: 1px solid #36ccb2;
