@@ -2,8 +2,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
 		uncss: {
 			dist: {
-				src: ['index.html'],
-				dest: 'css/tidy.min.css',
+				src: ['src/index.html'],
+				dest: 'deploy/css/tidy.min.css',
 				options: {
 					report: 'min'
 				}

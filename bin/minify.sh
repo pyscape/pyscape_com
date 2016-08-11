@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Tested on Ubuntu Desktop 16.04
 
 #########
 # Setup #
@@ -9,17 +10,25 @@
 #
 # Consider adding a sym link to the ui-compressor if it's not already 
 # setup in /usr/bin/. Something like the following should work:
-# >>> sudo ln -s /home/myUser/source/yuicompressor-2.4.7 /usr/bin/yuicompressor
-# Or modify this file to point to your yuicompressor
+#
+# For Ubuntu:
+#
+# >>> sudo ln -s /home/<myUser>/source/yuicompressor-2.4.7 /usr/bin/yuicompressor
+#
+# -- OR --
+#
+# Modify this file to point to your yuicompressor's jar file:
 
 yui='/usr/bin/yuicompressor/build/yuicompressor-2.4.7.jar'
 java='/usr/bin/java'
 
-# Requires nodejs, npm, grunt, and grunt-uncss
+# Requires nodejs, npm, grunt, and grunt-uncss, grunt-injector
+# For Ubuntu:
 # >>> sudo apt-get install nodejs
 # >>> sudo apt-get install npm
 # >>> sudo npm install -g grunt-cli
 # >>> sudo npm install grunt-uncss --save-dev
+# >>> sudo npm install grunt-replace --save-dev
 
 ###################
 # JS Minification #
@@ -42,7 +51,6 @@ cat js/index.js >> js/deploy.min.js
 
 # Must have. Do not remove.
 
-
 $java -jar $yui css/theme.css -o css/theme.min.css
 $java -jar $yui css/animate.css -o css/animate.min.css
 $java -jar $yui css/ubuntu_300.css -o css/ubuntu_300.min.css
@@ -52,5 +60,9 @@ echo $'\n' >> css/style.min.css
 cat css/theme.min.css >> css/style.min.css
 echo $'\n' >> css/style.min.css
 cat css/animate.min.css >> css/style.min.css
+
+####################
+# Grunt Automation #
+####################
 
 grunt
