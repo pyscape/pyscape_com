@@ -3529,10 +3529,13 @@ tbody.collapse.in {
 .navbar-nav {
   margin: 19.25px -40px; }
   .navbar-nav > li > a {
-    padding: 40px;
+    padding: 50px;
+    margin: 50px;
     text-align: center;
     font-weight: bold;
     border: 1px solid #36ccb2;
+    height: 100px;
+    display: block;
 }
   @media (max-width: 767px) {
     .navbar-nav .open .dropdown-menu {
