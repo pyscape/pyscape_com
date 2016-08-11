@@ -7472,3 +7472,18 @@ a.navbar-brand:hover {
     background-image: url('src/img/image3.jpg');
     background-size:cover;
 }
+
+#hero,
+#about,
+#contact,
+#hero {
+    padding: 5px;
+    margin: 20px;
+    line-height: 40px;
+    height: 50px;
+    width: 92%;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #36ccb2;
+}
+
