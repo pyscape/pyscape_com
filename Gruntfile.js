@@ -7,20 +7,6 @@ module.exports = function(grunt) {
 				options: {
 					report: 'min',
                     ignore: [
-                        '.navbar-toggle',
-                        '.collapsed',
-                        '.in',
-                        '.nav',
-                        '.nav-divider',
-                        '.nav .nav-divider',
-                        '.navbar-nav',
-                        '.navbar-right',
-                        '.navbar-inverse',
-                        '.navbar-inverse .navbar-nav',
-                        '.navbar-inverse .navbar-collapse',
-                        '.navbar-inverse .navbar-form',
-                        '.container .navbar-collaps',
-                        '.navbar-collapse.in',
                         '.collapse.in'
                     ]
 				}
