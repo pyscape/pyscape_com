@@ -63,3 +63,7 @@ target/
 
 # Node modules
 node_modules/
+
+# minified files that aren't used
+css/ubuntu_300.min.css
+css/style.min.css

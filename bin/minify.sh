@@ -45,8 +45,11 @@ cat js/index.js >> js/deploy.min.js
 
 $java -jar $yui css/theme.css -o css/theme.min.css
 $java -jar $yui css/animate.css -o css/animate.min.css
+$java -jar $yui css/ubuntu_300.css -o css/ubuntu_300.min.css
 
-cat css/theme.min.css > css/style.min.css
+cat css/ubuntu_300.min.css > css/style.min.css
+echo $'\n' >> css/style.min.css
+cat css/theme.min.css >> css/style.min.css
 echo $'\n' >> css/style.min.css
 cat css/animate.min.css >> css/style.min.css
 
