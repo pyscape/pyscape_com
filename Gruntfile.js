@@ -40,9 +40,16 @@ module.exports = function(grunt) {
                     dest: 'deploy/'
                 }]
             }
+        },
+        sitemap: {
+            dist: {
+                pattern: ['*.html'],
+                siteRoot: ''
+            }
         }
 	});
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-replace');
-    grunt.registerTask('default', ['uncss', 'replace']);
+    grunt.loadNpmTasks('grunt-sitemap');
+    grunt.registerTask('default', ['uncss', 'replace', 'sitemap']);
 };

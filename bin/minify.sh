@@ -22,13 +22,14 @@
 yui='/usr/bin/yuicompressor/build/yuicompressor-2.4.7.jar'
 java='/usr/bin/java'
 
-# Requires nodejs, npm, grunt, and grunt-uncss, grunt-injector
+# Requires nodejs, npm, grunt, and grunt-uncss, grunt-replace, grunt-sitemap
 # For Ubuntu:
 # >>> sudo apt-get install nodejs
 # >>> sudo apt-get install npm
 # >>> sudo npm install -g grunt-cli
 # >>> sudo npm install grunt-uncss --save-dev
 # >>> sudo npm install grunt-replace --save-dev
+# >>> sudo npm install grunt-sitemap --save-dev
 
 ###############################
 # initilize deployment folder #
