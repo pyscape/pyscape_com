@@ -68,3 +68,4 @@ grunt
 ##############
 
 cp deploy/index.html index.html
+cp deploy/services.html services.html

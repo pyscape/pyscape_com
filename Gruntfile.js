@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 		uncss: {
 			dist: {
-				src: ['src/index.html'],
+				src: ['src/index.html', 'src/services.html'],
 				dest: 'deploy/css/deploy.css',
 				options: {
 					report: 'min',
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: ['src/index.html'],
+                    src: ['src/index.html', 'src/services.html'],
                     dest: 'deploy/'
                 }]
             }
