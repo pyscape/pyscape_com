@@ -1,17 +1,17 @@
 module.exports = function(grunt) {
     grunt.initConfig({
-		uncss: {
-			dist: {
-				src: ['src/index.html', 'src/services.html'],
-				dest: 'deploy/css/deploy.css',
-				options: {
-					report: 'min',
+        uncss: {
+            dist: {
+                src: ['src/index.html', 'src/services.html'],
+                dest: 'deploy/css/deploy.css',
+                options: {
+                    report: 'min',
                     ignore: [
                         '.collapse.in'
                     ]
-				}
-			}
-		},
+                }
+            }
+        },
         replace: {
             dist: {
                 options: {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
                 siteRoot: ''
             }
         }
-	});
+    });
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sitemap');
