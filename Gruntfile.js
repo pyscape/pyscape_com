@@ -2,13 +2,28 @@ module.exports = function(grunt) {
     grunt.initConfig({
         uncss: {
             dist: {
-                src: ['src/index.html', 'src/services.html'],
+                src: ['src/index.html'],
                 dest: 'deploy/css/deploy.css',
                 options: {
                     report: 'min',
                     ignore: [
-                        '.collapse.in'
+                        '.collapse.in',
+                        '.owl-carousel .owl-stage',
+                        '.owl-carousel .owl-item',
+                        '.owl-carousel.owl-loaded',
+                        '.no-js .owl-carousel',
                     ]
+                }
+            }
+        },
+        cssmin: {
+            options: {
+                shorthandCompacting: true,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                'deploy/css/deploy.min.css': ['deploy/css/deploy.css']
                 }
             }
         },
@@ -24,7 +39,22 @@ module.exports = function(grunt) {
                     },{
                         match: 'pyscapeCSS',
                         replacement: function() {
-                            return grunt.file.read('deploy/css/deploy.css')
+                            return grunt.file.read('deploy/css/deploy.min.css')
+                        }
+                    },{
+                        match: 'owlJS',
+                        replacement: function() {
+                            return grunt.file.read('src/js/owl.carousel.min.js')
+                        }
+                    },{
+                        match: 'indexJS',
+                        replacement: function() {
+                            return grunt.file.read('src/js/index.min.js')
+                        }
+                    },{
+                        match: 'trackingJS',
+                        replacement: function() {
+                            return grunt.file.read('src/js/tracking.min.js')
                         }
                     },{
                         match: 'pyscapeJS',
@@ -49,7 +79,8 @@ module.exports = function(grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-uncss');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sitemap');
-    grunt.registerTask('default', ['uncss', 'replace', 'sitemap']);
+    grunt.registerTask('default', ['uncss', 'cssmin',  'replace', 'sitemap']);
 };

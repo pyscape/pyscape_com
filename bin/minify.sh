@@ -22,14 +22,16 @@
 yui='/usr/bin/yuicompressor/build/yuicompressor-2.4.7.jar'
 java='/usr/bin/java'
 
-# Requires nodejs, npm, grunt, and grunt-uncss, grunt-replace, grunt-sitemap
+# Requires nodejs, npm, grunt, and grunt-uncss, grunt-replace, grunt-sitemap, grunt-contrib-cssmin
 # For Ubuntu:
 # >>> sudo apt-get install nodejs
 # >>> sudo apt-get install npm
-# >>> sudo npm install -g grunt-cli
-# >>> sudo npm install grunt-uncss --save-dev
-# >>> sudo npm install grunt-replace --save-dev
-# >>> sudo npm install grunt-sitemap --save-dev
+# >>> npm install -g grunt-cli
+# >>> npm install grunt-uncss --save-dev
+# >>> npm install grunt-replace --save-dev
+# >>> npm install grunt-sitemap --save-dev
+# >>> npm install grunt-contrib-cssmin --save-dev
+
 
 ###############################
 # initilize deployment folder #
@@ -39,6 +41,7 @@ mkdir -p deploy/js
 mkdir -p deploy/css
 mkdir -p deploy/img
 cp src/index.html deploy/index.html
+cp src/js/index.js src/index.min.js
 cp -r src/img/* deploy/img/
 
 ###################
@@ -49,13 +52,6 @@ cp -r src/img/* deploy/img/
 cat src/js/jquery.min.js        > deploy/js/deploy.min.js
 echo $'\n\n'                   >> deploy/js/deploy.min.js
 cat src/js/bootstrap.min.js    >> deploy/js/deploy.min.js
-echo $'\n\n'                   >> deploy/js/deploy.min.js
-
-# Optional
-cat src/js/owl.carousel.min.js >> deploy/js/deploy.min.js
-echo $'\n\n'                   >> deploy/js/deploy.min.js
-cat src/js/index.js            >> deploy/js/deploy.min.js
-
 
 ####################
 # Grunt Automation #
