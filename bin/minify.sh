@@ -41,7 +41,6 @@ mkdir -p deploy/js
 mkdir -p deploy/css
 mkdir -p deploy/img
 cp src/index.html deploy/index.html
-cp src/js/index.js src/index.min.js
 cp -r src/img/* deploy/img/
 
 ###################
@@ -49,6 +48,9 @@ cp -r src/img/* deploy/img/
 ###################
 
 # Must have. Do not remove.
+$java -jar $yui src/js/present.js -o src/js/present.min.js
+$java -jar $yui src/js/index.js   -o src/js/index.min.js
+
 cat src/js/jquery.min.js        > deploy/js/deploy.min.js
 echo $'\n\n'                   >> deploy/js/deploy.min.js
 cat src/js/bootstrap.min.js    >> deploy/js/deploy.min.js

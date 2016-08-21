@@ -8,10 +8,6 @@ module.exports = function(grunt) {
                     report: 'min',
                     ignore: [
                         '.collapse.in',
-                        '.owl-carousel .owl-stage',
-                        '.owl-carousel .owl-item',
-                        '.owl-carousel.owl-loaded',
-                        '.no-js .owl-carousel',
                     ]
                 }
             }
@@ -42,9 +38,9 @@ module.exports = function(grunt) {
                             return grunt.file.read('deploy/css/deploy.min.css')
                         }
                     },{
-                        match: 'owlJS',
+                        match: 'presentJS',
                         replacement: function() {
-                            return grunt.file.read('src/js/owl.carousel.min.js')
+                            return grunt.file.read('src/js/present.min.js')
                         }
                     },{
                         match: 'indexJS',
