@@ -1,0 +1,1077 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link
+                href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4AgKEBcF7JLJ7gAAActJREFUOMt10j9ollcUx/GP8cUiYoNSotAKthGEoIJ4uSntIEVBkHJxqQEnoS6Z1UVxELEuTXVqi0MTIVAK4nBFsC0ZFBdvb8VsQgYVu/gHB0VQaNXlRp68vj3b+d5zfuc8v+eINU/EmntaxJo/ijUf0olY83isea0BMYRt+G4RlJCe4Gys+fNO3TD+/j+BU9gfa/62w8dwaXFqCekPXI01//qeQAnpJTbhh1jzZ63hAY7hdqz5g8YmMdI3yFB7/Be78FeseV1jM5jFj536b3Au1vzFEoHWUHEcc4tTcQLjseajreYpRnE51rx8iUAr+BlXcKHl/yFgMtY81tgjHMFCrHnFskHOxpoX8EsJ6UzLt+EW1pSQnjf2Ex4ODWheiQ/xoIM/xj940fen7vcGLHAe0yWk2Sa4oZn5aQnpdWNTeFlCmu71TT+HT3Cw5aswj4kS0rPGvsSeEtIW6J7w19iLrc08zczTJaQ/W81mXGt3451ArHk9fsPGEtKrxr7HSAlpqrPk79hRQrr3TiDWPIw72FdCetyav8JubO9seL15M9/97B7O4nBnzdWYw2gJ6U1jB/CqhHSy3/EeZnCjj+8sId3t5DdxcdDNvAXebLCLzL6VYAAAAABJRU5ErkJggg=="
+                rel="icon" type="image/png" />
+        <link rel="stylesheet" 
+              src="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+
+
+        <title>PyScape | Odoo</title>
+        <style>
+@charset "UTF-8";button,h1,h2,h3,h4,h5{color:inherit;font-family:inherit}.btn,button{cursor:pointer}.btn,.nav>li,.text-center{text-align:center}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/ty9dfvLAziwdqQ2dHoyjphkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');unicode-range:U+0460-052F,U+20B4,U+2DE0-2DFF,U+A640-A69F}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/frNV30OaYdlFRtH2VnZZdhkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/gwVJDERN2Amz39wrSoZ7FxkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/aZMswpodYeVhtRvuABJWvBkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/VvXUGKZXbHtX_S_VCTLpGhkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');unicode-range:U+0102-0103,U+1EA0-1EF9,U+20AB}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/e7MeVAyvogMqFwwl61PKhBkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),local('sans-serif-thin'),url(http://fonts.gstatic.com/s/roboto/v15/2tsd397wLxj96qwHyNIkxHYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/0eC6fl06luXEYWpBSJvXCIX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0460-052F,U+20B4,U+2DE0-2DFF,U+A640-A69F}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/Fl4y0QdOxyyTHEGMXX8kcYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/-L14Jk06m6pUHB-5mXQQnYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/I3S1wsgSg9YCurV6PUkTOYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/NYDWBdD4gIq26G5XYbHsFIX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0102-0103,U+1EA0-1EF9,U+20AB}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/Pru33qjShpZSmG3z6VYwnYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),local('sans-serif-light'),url(http://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/sTdaA6j0Psb920Vjv-mrzH-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');unicode-range:U+0460-052F,U+20B4,U+2DE0-2DFF,U+A640-A69F}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/tnj4SB6DNbdaQnsM8CFqBX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/_VYFx-s824kXq_Ul2BHqYH-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/NJ4vxlgWwWbEsv18dAhqnn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');unicode-range:U+0102-0103,U+1EA0-1EF9,U+20AB}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),local('sans-serif'),url(http://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/ZLqKeelYbATG60EpZBSDy4X0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0460-052F,U+20B4,U+2DE0-2DFF,U+A640-A69F}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/oHi30kwQWvpCWqAhzHcCSIX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/rGvHdJnr2l75qb0YND9NyIX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/mx9Uck6uB63VIKFYnEMXrYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/mbmhprMH69Zi6eEPBYVFhYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0102-0103,U+1EA0-1EF9,U+20AB}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/oOeFwZNlrTefzLYmlVV1UIX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),local('sans-serif-medium'),url(http://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUZBw1xU1rKptJj_0jans920.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:Raleway;font-style:normal;font-weight:100;src:local('Raleway Thin'),local('Raleway-Thin'),url(https://fonts.gstatic.com/s/raleway/v11/rr0ijB5_2nAJsAoZ6vECXYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Raleway;font-style:normal;font-weight:100;src:local('Raleway Thin'),local('Raleway-Thin'),url(https://fonts.gstatic.com/s/raleway/v11/RJMlAoFXXQEzZoMSUteGWJBw1xU1rKptJj_0jans920.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:Raleway;font-style:normal;font-weight:300;src:local('Raleway Light'),local('Raleway-Light'),url(https://fonts.gstatic.com/s/raleway/v11/ZKwULyCG95tk6mOqHQfRBAsYbbCjybiHxArTLjt7FRU.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Raleway;font-style:normal;font-weight:300;src:local('Raleway Light'),local('Raleway-Light'),url(https://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}nav,section{display:block}a:active,a:hover{outline:0}h1{margin:.67em 0}button{color:inherit;font:inherit;margin:0;overflow:visible;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */@media print{*,:after,:before{background:0 0!important;color:#000!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}a[href^="#"]:after{content:""}blockquote{border:1px solid #999;page-break-inside:avoid}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}.navbar{display:none}}.btn,.btn-primary:active,.btn:active,.navbar-toggle{background-image:none}.container:after,.container:before,.nav:after,.nav:before,.row:after,.row:before{content:" "}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{margin:0;font-family:Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.66;color:#222;background-color:#b8bbc4}button{font-size:inherit;line-height:inherit}a{background-color:transparent;color:#36ccb2;text-decoration:none}a:focus,a:hover{color:#307b5f;text-decoration:underline}a:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}h1,h2,h3,h4,h5{margin-bottom:11.5px}.btn,.btn-lg{border-radius:3px!important}h1,h2,h3,h4,h5{font-weight:500;line-height:1.1}h1,h2,h3{margin-top:23px}h4,h5{margin-top:11.5px}h1{font-size:51px}h2{font-size:43px}h3{font-size:35px}h4{font-size:26px}h5{font-size:19px}p{margin:0 0 11.5px}.lead{margin-bottom:23px;font-size:16px;font-weight:300;line-height:1.4}@media (min-width:768px){.lead{font-size:21px}.container{width:800px}}ul{margin-top:0;margin-bottom:11.5px}blockquote{padding:11.5px 23px;margin:0 0 23px;font-size:17.5px;border-left:5px solid #fff}.btn,.nav,blockquote p:last-child{margin-bottom:0}.container{margin-right:auto;margin-left:auto;padding-left:40px;padding-right:40px}.container:after,.container:before{display:table}.container:after{clear:both}@media (min-width:992px){.container{width:1020px}}@media (min-width:1200px){.container{width:1220px}}.row{margin-left:-40px;margin-right:-40px}.row:after,.row:before{display:table}.row:after{clear:both}.col-md-10,.col-md-12,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-xs-12,.col-xs-6{position:relative;min-height:1px;padding-left:40px;padding-right:40px}.col-xs-12,.col-xs-6{float:left}.col-xs-6{width:50%}.col-xs-12{width:100%}@media (min-width:992px){.col-md-10,.col-md-12,.col-md-2,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8{float:left}.col-md-2{width:16.66667%}.col-md-4{width:33.33333%}.col-md-5{width:41.66667%}.col-md-6{width:50%}.col-md-7{width:58.33333%}.col-md-8{width:66.66667%}.col-md-10{width:83.33333%}.col-md-12{width:100%}.col-md-offset-1{margin-left:8.33333%}.col-md-offset-2{margin-left:16.66667%}.col-md-offset-4{margin-left:33.33333%}}.btn{display:inline-block;font-weight:400;vertical-align:middle;touch-action:manipulation;white-space:nowrap;padding:14px 21px;font-size:14px;line-height:1.66;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.btn:active:focus,.btn:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}.btn:focus,.btn:hover{color:#333;text-decoration:none}.btn:active{outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-primary{color:#fff;background-color:#36ccb2;border-color:#3fa07b}.btn-primary:focus{color:#fff;background-color:#1a705f;border-color:#1b4434}.btn-primary:active,.btn-primary:hover{color:#fff;background-color:#1a705f;border-color:#2e7459}.btn-primary:active:focus,.btn-primary:active:hover{color:#fff;background-color:#2e7459;border-color:#1b4434}.btn-lg{padding:21px 28px;font-size:18px;line-height:1.33333}.navbar-brand,.navbar-brand .span-py{line-height:23px;letter-spacing:.75px}.btn-block{display:block;width:100%}.collapse{display:none}.collapse.in{display:block}.nav{padding-left:0;list-style:none}.nav:after,.nav:before{display:table}.nav>li,.nav>li>a{display:block;position:relative}.nav:after{clear:both}.nav>li{font-weight:700}.nav>li>a{padding:10px 15px}.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before{content:" ";display:table}.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#000}.navbar{min-height:100px;margin-bottom:23px;border:1px solid transparent}.navbar:after{clear:both}.navbar-header:after{clear:both}.navbar-collapse{overflow-x:visible;padding-right:40px;padding-left:40px;border-top:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);-webkit-overflow-scrolling:touch}.navbar-collapse:after{clear:both}.container>.navbar-collapse,.container>.navbar-header{margin-right:-40px;margin-left:-40px}@media (min-width:768px){.navbar{border-radius:3px!important}.navbar-header{float:left}.navbar-collapse{width:auto;border-top:0;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}.container>.navbar-collapse,.container>.navbar-header{margin-right:0;margin-left:0}.navbar>.container .navbar-brand{margin-left:-40px}}.navbar-brand{float:left;padding:38.5px 40px;font-family:Ubuntu,sans-serif;font-size:24px;height:100px}.navbar-brand:focus,.navbar-brand:hover{text-decoration:none}.navbar-brand .span-brand{font-family:Courier,serif;color:#36ccb2;font-size:16px;transform:scale(1,2);-webkit-transform:scale(1,2);display:inline-block}.navbar-brand .span-py{font-family:Ubuntu,sans-serif;color:#36ccb2;padding-right:1.5px;font-size:24px;display:inline-block}.navbar-toggle{position:relative;float:right;margin-right:40px;padding:9px 10px;margin-top:33px;margin-bottom:33px;background-color:transparent;border:1px solid transparent;border-radius:3px!important}.navbar-toggle:focus{outline:0}.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}.navbar-nav{margin:19.25px -40px}@media (min-width:768px){.navbar-toggle{display:none}.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:38.5px;padding-bottom:38.5px}.navbar-right{float:right!important;margin-right:-40px}}.navbar-inverse{background-color:#222;border-color:#090909}.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav>li>a{color:#d9dadf}.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{background-color:transparent}.navbar-inverse .navbar-toggle{border-color:#333}.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{background-color:#333}.navbar-inverse .navbar-toggle .icon-bar{background-color:#fff}.navbar-inverse .navbar-collapse{border-color:#101010}@at-root{@font-face{font-family:'Glyphicons Halflings';src:url(../fonts/bootstrap/glyphicons-halflings-regular.eot);src:url(../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/bootstrap/glyphicons-halflings-regular.woff2) format('woff2'),url(../fonts/bootstrap/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/bootstrap/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}@-ms-viewport{width:device-width}}/*!
+*  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+*  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+*/@font-face{font-family:FontAwesome;src:url(../fonts/fontawesome-webfont.eot?v=4.3.0);src:url(../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),url(../fonts/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),url(../fonts/fontawesome-webfont.woff?v=4.3.0) format('woff'),url(../fonts/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),url(../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-weight:300!important}.btn,a{-webkit-transition:.5s ease-in-out;-moz-transition:.5s ease-in-out;-o-transition:.5s ease-in-out;transition:.5s ease-in-out}h1,h2,h3{font-weight:100!important;font-family:Raleway,sans-serif}h4,h5{font-weight:400}.wrapper-default h2{color:#000}p.lead{margin:0 0 28px}.wrapper,.wrapper-default{padding:129.44px 0;background-color:#fff;position:relative;color:#222}.wrapper-contrast{background:#393C44;color:#fff}.wrapper-dark{background-color:#222428;color:#fff}.wrapper-transparent{background-color:transparent;color:#222}.wrapper-sm{padding:80px 0}.wrapper-md{padding:129.44px 0}.wrapper-lg{padding:160px 0}.wrapper-huge{padding:280px 0}.wrapper-no-padding{padding:0}.wrapper-dark blockquote{border-left:5px solid #36ccb2}.wrapper-transparent a{color:#222}.wrapper-transparent a:hover{color:#36ccb2}.wrapper.wrapper-navbar{position:fixed;left:0;right:0;width:100%;display:block;z-index:100}.navbar{margin:0 auto;position:relative;z-index:10;border-radius:0}.navbar-transparent{background:rgba(0,0,0,.7);border:none}.navbar-inverse .navbar-brand{color:#fff}.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{color:#36ccb2}a.navbar-brand{height:auto}a.navbar-brand:hover{color:#36ccb2!important}.nav.subnav>li>a:hover{background:0 0}.wrapper-shadow{box-shadow:0 0 200px #5c616e}.btn{border:none;text-transform:uppercase}.overlay{background-color:rgba(44,52,60,.8);position:absolute;top:0;left:0;width:100%;height:100%}#hero{background-image:url(src/img/image3.jpg);background-size:cover}/*!
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/@font-face{font-family:Ubuntu;font-style:normal;font-weight:300;src:local('Ubuntu Light'),local('Ubuntu-Light'),url(https://fonts.gstatic.com/s/ubuntu/v9/_aijTyevf54tkVDLy-dlnKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype')}
+.videoThumb {
+    margin-bottom: 45px;
+}
+img.background {
+    width: 100%
+}
+.panel-body {
+    padding: 15px;
+}
+.media-left, .media-right, .media-body {
+    display: table-cell;
+    vertical-align: top;
+}
+.media-left {
+    padding-right: 15px;
+}
+
+
+.panel-alpha .panel-heading {
+    border-top: 3px solid #00A09D;
+}
+
+.panel-beta .panel-heading {
+    border-top: 3px solid #5B899E;
+}
+
+.panel-gamma .panel-heading {
+    border-top: 3px solid #E46F78;
+}
+
+.panel-delta .panel-heading {
+    border-top: 3px solid #5C5B80;
+}
+
+.panel-epsilon .panel-heading {
+    border-top: 3px solid #D5653E;
+}
+
+.panelBox .panel-heading {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #21272b;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+    font-size: 19px;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.panelBox .panel-heading small, .panelBox .panel-heading .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #21272b;
+}
+
+.panelBox .panel-heading small, .panelBox .panel-heading .small {
+    font-size: 75%;
+}
+
+.panelBox {
+    border-width: 0;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.17);
+}
+
+.panelBox.deep_hover:hover {
+    -webkit-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -moz-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -o-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.panelBox.deep_hover:hover {
+    -webkit-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -moz-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -o-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.panelBox .top {
+    position: absolute;
+    top: 0;
+    left: auto;
+    bottom: auto;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    pointer-events: none;
+    border-radius: 2px 2px 0 0;
+    border-top: 5px solid transparent;
+    z-index: 1;
+    background: transparent;
+}
+
+.panelBox .top .label {
+    border-radius: 0 2px 0 0;
+    padding: 10px 15px;
+    height: 30px;
+    position: absolute;
+    top: -5px;
+    left: auto;
+    bottom: auto;
+    right: 0;
+}
+
+.panelBox .top img.pull-right {
+    position: absolute;
+    top: -5px;
+    left: auto;
+    bottom: auto;
+    right: 0;
+    border-radius: 0 2px 0 0;
+}
+
+.panelBox .top.bg-white {
+    border-top-color: white;
+}
+
+.panelBox .top.bg-gray-lighter {
+    border-top-color: #F2F2F2;
+}
+
+.panelBox .top.bg-alpha {
+    border-top-color: #00A09D;
+}
+
+.panelBox .top.bg-alpha-lightest {
+    border-top-color: #2AEBC4;
+}
+
+.panelBox .top.bg-alpha-light {
+    border-top-color: #26D1AF;
+}
+
+.panelBox .top.bg-alpha-dark {
+    border-top-color: #2AEBC4;
+}
+
+.panelBox .top.bg-beta {
+    border-top-color: #5B899E;
+}
+
+.panelBox .top.bg-beta-lightest {
+    border-top-color: #77B5D1;
+}
+
+.panelBox .top.bg-beta-light {
+    border-top-color: #699FB8;
+}
+
+.panelBox .top.bg-beta-dark {
+    border-top-color: #77B5D1;
+}
+
+.panelBox .top.bg-gamma {
+    border-top-color: #E46F78;
+}
+
+.panelBox .top.bg-gamma-lightest {
+    border-top-color: #FC959C;
+}
+
+.panelBox .top.bg-gamma-light {
+    border-top-color: #FC7C84;
+}
+
+.panelBox .top.bg-gamma-dark {
+    border-top-color: #FC959C;
+}
+
+.panelBox .top.bg-delta {
+    border-top-color: #5C5B80;
+}
+
+.panelBox .top.bg-delta-lightest {
+    border-top-color: #807FB3;
+}
+
+.panelBox .top.bg-delta-light {
+    border-top-color: #6E6D99;
+}
+
+.panelBox .top.bg-delta-dark {
+    border-top-color: #807FB3;
+}
+
+.panelBox .top.bg-epsilon {
+    border-top-color: #D5653E;
+}
+
+.panelBox .top.bg-epsilon-lightest {
+    border-top-color: #FF8D63;
+}
+
+.panelBox .top.bg-epsilon-light {
+    border-top-color: #F07346;
+}
+
+.panelBox .top.bg-epsilon-dark {
+    border-top-color: #FF8D63;
+}
+
+.panelBox .o_panel_cover {
+    width: 100%;
+    height: 170px;
+    display: block;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    background-size: cover;
+    background-position: center;
+}
+
+.panelBox .s_figure_link {
+    border-radius: 2px 2px 0 0;
+    text-align: left;
+    overflow: hidden;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+.panelBox .s_figure_link > a {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -webkit-filter: none;
+    filter: none;
+}
+
+.panelBox .s_figure_link > a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.panelBox .s_figure_link h2 {
+    font-size: 26px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    position: absolute;
+    top: auto;
+    left: 15px;
+    bottom: 0px;
+    right: 15px;
+    -webkit-transform: translate(0, 10%);
+    -ms-transform: translate(0, 10%);
+    -o-transform: translate(0, 10%);
+    transform: translate(0, 10%);
+}
+
+.panelBox .s_figure_link h2:after {
+    display: none;
+}
+
+.panelBox.panel_card, .panelBox.panel_app {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panelBox.panel_card .panelBox-body, .panelBox.panel_app .panelBox-body {
+    padding-bottom: 25px;
+}
+
+.panelBox.panel_card .panel-footer, .panelBox.panel_app .panel-footer {
+    margin: 10px 0;
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.panelBox.s_case_study .panel-body {
+    padding-bottom: 70px;
+}
+
+.panelBox.s_case_study .o_panel_logo {
+    max-width: 20%;
+    max-height: 42px;
+    position: absolute;
+    top: auto;
+    left: 15px;
+    bottom: 10px;
+    right: auto;
+}
+
+.panelBox.s_panel_video {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panelPlay {
+}
+
+.panelPlay > img {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -webkit-filter: none;
+    filter: none;
+
+}
+
+.panelPlay:hover > img {
+    opacity: 1;
+    filter: alpha(opacity=1);
+    -webkit-filter: none;
+    filter: none;
+}
+
+
+.panelPlay::after {
+    content: "";
+    position: absolute;
+    top: -130px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    cursor: pointer;
+    background-image: url(src/img/odoo/play-button.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 40%;
+    -moz-background-size: 40%;
+    -o-background-size: 40%;
+    background-size: 40%;
+    -webkit-transition: background 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -moz-transition: background 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -o-transition: background 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    transition: background 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+}
+
+.panelPlay:hover::after {
+    -webkit-background-size: 45%;
+    -moz-background-size: 45%;
+    -o-background-size: 45%;
+    background-size: 45%;
+}
+
+.panelPlay:hover h2 {
+    -webkit-transform: translate(0, 10%);
+    -ms-transform: translate(0, 10%);
+    -o-transform: translate(0, 10%);
+    transform: translate(0, 10%);
+}
+
+.panelBox.s_panel_video .media-object {
+    max-width: initial;
+}
+
+.panelBox.panel_card {
+    overflow: hidden;
+}
+
+.panelBox.panel_card .panel-body {
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.panelBox.panel_app .panel-body {
+    margin-top: 15px;
+    padding-bottom: 50px;
+}
+
+.panelBox.panel_app_small {
+    padding: 0;
+    position: relative;
+    -webkit-transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -moz-transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    -o-transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    transition: box-shadow 1s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+}
+
+.panelBox.panel_app_small a {
+    padding: 15px;
+    display: block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.panelBox.panel_app_small a img {
+    width: 25px;
+    max-width: inherit;
+    margin-right: 0;
+}
+
+@media all and (min-width: 768px) {
+    .panelBox.panel_app_small a img {
+        width: 50px;
+    }
+}
+
+.panelBox.panel_app_small a h4 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* /openerp_website/static/src/less/snippets/s_panel_video.less defined in bundle 'web.assets_frontend' */
+.s_panel_video_play {
+    padding-top: 25%;
+    font-size: 5.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: auto;
+    bottom: auto;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.2s ease-in-out;
+    ; -o-transition: all 0.2s ease-in-out;
+    ; transition: all 0.2s ease-in-out;
+    ;}
+
+.s_panel_video_play:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.s_laptop_screen .s_panel_video_play {
+    border-radius: 5% 5% 0 0;
+}
+
+#s_panel_video_modal {
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+#s_panel_video_modal > * {
+    -ms-flex: 0 0 auto;
+    -moz-flex: 0 0 auto;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+#s_panel_video_modal > *:not(:last-child) {
+    margin-right: -1px;
+}
+
+@media screen and (min-height: 620px) {
+    #s_panel_video_modal .modal-dialog {
+        margin-top: -10%;
+    }
+}
+
+#s_panel_video_modal .modal-dialog .close {
+    color: white;
+}
+
+#s_panel_video_modal .modal-header {
+    border-bottom: none;
+    padding: 15px 0 30px;
+}
+
+#s_panel_video_modal .modal-body {
+    padding: 0;
+    background-color: #21272b;
+    background-image: url("/openerp_website/static/src/img/2016/gif/ring.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+@media screen and (max-width: 767px) {
+    #s_panel_video_modal .modal-dialog {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+.fw_regular, .fw_medium {
+    font-weight: 400;
+}
+.mt0 {
+    margin-top: 0px !important;
+}
+
+        </style>
+    </head>
+    <body id="skrollr-body" data-spy="scroll" data-target=".navbar" class="layout-boxed-no" >
+        <!-- "layout-boxed" class for boxed layout "layout-boxed-no" class for full size wrapper -->
+        <section class="wrapper wrapper-navbar wrapper-no-padding wrapper-transparent">
+            <nav class="navbar navbar-inverse navbar-transparent  wow fadeIn"  data-0="background-color:rgba(0,0,0,0); border-bottom:1px solid rgba(255,255,255,.1);" data-100="background-color:rgba(0,0,0,.9);border-bottom:1px solid rgba(255,255,255,0);">
+                <div class="container" >
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <span class="span-brand">>>></span>
+                            <span class="span-py">py</span>scape
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="index.html#hero">Home 
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#about">About</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </section>
+        <!-- Hero area -->
+        <div class="wrapper-shadow">
+            <section id="hero" class="wrapper wrapper-contrast wrapper-xs"  >
+                <div class="container  wow fadeIn">
+                    <div class="row"></div>
+                </div>
+            </section>
+            <!-- Page intro -->
+            <section id="team" class="wrapper wrapper-accent wrapper-sm" style="background-image: url(src/img/topo.png);">
+                <div class="container  wow fadeIn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Odoo <sub>Enterprise ERP and CRM</sub></h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- START main content -->
+            <section id="app" class="wrapper wrapper-default wrapper-md" >
+                <div class="container wow fadeIn">
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="v2O0YZU19ms">
+                            <img class="background" src="https://img.youtube.com/vi/v2O0YZU19ms/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/hr_timesheet_sheet.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Timesheet</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="351Da7Qx0IQ">
+                            <img class="background" src="https://img.youtube.com/vi/351Da7Qx0IQ/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/website.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Website Builder</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="6XgKPjgyoec">
+                            <img class="background" src="https://img.youtube.com/vi/6XgKPjgyoec/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/account.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Accounting</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="8DBabYQ1nUE">
+                            <img  height="100%" width="100%" class="background" src="src/img/odoo/esign.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/website_sign.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">eSignature</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="BJXmLEUoXZA">
+                            <img height="100%" width="100%" class="background" src="src/img/odoo/marketing-automation.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/marketing_automation.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Marketing Automation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="KxZAdEGpYAw">
+                            <img class="background" src="https://img.youtube.com/vi/KxZAdEGpYAw/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/crm.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">CRM</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="QtIU0p8daAo">
+                            <img class="background" src="https://img.youtube.com/vi/QtIU0p8daAo/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/mrp.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">MRP</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="QuNsa9n9PMg">
+                            <img class="background" src="https://img.youtube.com/vi/QuNsa9n9PMg/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/sh.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">odoo.sh</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="SKntaHqtCVg">
+                            <img class="background" src="https://img.youtube.com/vi/SKntaHqtCVg/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/website_sale.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">eCommerce</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="VMuCr5_arsY">
+                            <img class="background" src="https://img.youtube.com/vi/VMuCr5_arsY/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/sale.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Sales</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="Vp5xqQOWLzE">
+                            <img class="background" src="https://img.youtube.com/vi/Vp5xqQOWLzE/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/stock.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Inventory</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="ZrFMphnpYpM">
+                            <img class="background" src="https://img.youtube.com/vi/ZrFMphnpYpM/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/project.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Project</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="bncoCFGYucI">
+                            <img class="background" src="https://img.youtube.com/vi/bncoCFGYucI/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/point_of_sale.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Point of Sale</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="lm3yMCdXClk">
+                            <img class="background" src="https://img.youtube.com/vi/lm3yMCdXClk/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/hr_expense.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Expenses</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="nSnc5W5cuwQ">
+                            <img class="background" src="https://img.youtube.com/vi/nSnc5W5cuwQ/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/website_calendar.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Appointments</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="pBX9t7L0PuA">
+                            <img class="background" src="https://img.youtube.com/vi/pBX9t7L0PuA/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/mass_mailing.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Email Marketing</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="rbEMUKnoXQI">
+                            <img class="background" src="https://img.youtube.com/vi/rbEMUKnoXQI/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/sale.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Reports</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="sDxfUTd-gs0">
+                            <img class="background" src="https://img.youtube.com/vi/sDxfUTd-gs0/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/marketing.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Marketing</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="tKttGwAeZDc">
+                            <img class="background" src="https://img.youtube.com/vi/tKttGwAeZDc/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/helpdesk.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Helpdesk</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="wrzf-LWruvo">
+                            <img class="background" src="https://img.youtube.com/vi/wrzf-LWruvo/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/hr.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Employees</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="transition-delay: 0ms;">
+                        <div class="videoThumb panelPlay s_figure_link o_overflow_hidden panelBox s_panel_video deep-1 deep_hover mb48s_figure_link " data-video-id="xCvFZrrQq7k">
+                            <img class="background" src="https://img.youtube.com/vi/xCvFZrrQq7k/maxresdefault.jpg" style=""></a>
+                            <h2 class="fw_regular mt0"></h2>
+                            <div class="panel-body" style="">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img class="cover o_bg_cover" height="30" width="30" alt="title" src="src/img/odoo/studio.jpg">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="fw_semibold">Studio</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+            <!-- END main content -->
+
+            <!-- Contact form -->
+            <section id="contact" class="wrapper wrapper-dark wrapper-md">
+                <div class="container  wow fadeIn">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Learn from us!</h2>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                <footer>Someone famous in 
+                                    <cite title="Source Title">Source Title</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- The contact form -->
+                            <form action="php/contact.php" method="post" role="form" data-toggle="validator">
+                                <div class="form-group">
+                                    <label for="inputName" class="control-label">Name</label>
+                                    <input type="text" name="name" class="form-control"  required >
+                                    <br>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputLastName" class="control-label">Email</label>
+                                    <input type="email" name="email" class="form-control"  required >
+                                    <br>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputLastName" class="control-label">Your Message</label>
+                                    <textarea rows="5" name="message" cols="30" class="form-control"  required ></textarea>
+                                    <br>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- .wrapper-shadow end -->
+            <!-- Footer section -->
+            <section id="footer" class="wrapper wrapper-transparent wrapper-sm">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-2 col-xs-6">
+                            <h4>Menu</h4>
+                            <ul class="nav subnav">
+                                <li role="presentation" class="active">
+                                    <a href="index.html#hero">Home</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="/index.html#about">About</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-md-offset-4">
+                            <h5>PyScape Ltd.</h5>
+                            <p>1438 W Oak Street</p>
+                            <p>Fort Collins, CO 80521</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="modalVideo" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div id="modalContent" style="width:560px;">
+                </div>
+            </div>
+        </div>
+        <button id="#modalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalVideo"> </button>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <script>
+            $( document ).ready(function() {
+                window.modalVideo = $( "#modalVideo" );
+                window.modalContent = modalVideo.find("#modalContent").first();
+                window.modalClose = modalVideo.find("button.close").first();
+                window.modalButton = $( "#modalButton" );
+                $(".videoThumb").click(function(src) {
+                    var elem = $(this);
+                    var data = elem.data();
+                    if(typeof data['videoId'] !== 'string') {
+                        window.modalClose.click();
+                        return;
+                    }
+                    var id = data['videoId'];
+                    window.modalContent.html(
+                        $("<iframe/>").attr({
+                            width:'560',
+                            height:'315' ,
+                            src:'https://www.youtube.com/embed/' + id ,
+                            frameborder:'0' ,
+                            allow:'autoplay; encrypted-media',
+                            allowfullscreen: true
+                        })
+                    );
+                    window.modalVideo.modal();
+                });
+            });
+        </script>
+    </body>
+</html>
